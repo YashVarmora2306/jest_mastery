@@ -1,0 +1,88 @@
+.markdown {
+  line-height: 1.7;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.markdown h1, .markdown h2, .markdown h3, .markdown h4 {
+  color: #fff;
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.markdown h1 { 
+  font-size: 2em; 
+  border-bottom: 1px solid var(--border-color); 
+  padding-bottom: 0.3em; 
+}
+
+.markdown h2 { 
+  font-size: 1.5em; 
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.3em;
+}
+
+.markdown h3 { 
+  font-size: 1.25em; 
+}
+
+.markdown p, .paragraph {
+  margin-bottom: 1.2em;
+}
+
+.markdown ul, .markdown ol {
+  margin-bottom: 1.2em;
+  padding-left: 1.5em;
+}
+
+.markdown li {
+  margin-bottom: 0.4em;
+}
+
+.markdown li code {
+  display: inline !important;
+  white-space: nowrap;
+}
+
+.markdown strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.inlineCode {
+  display: inline !important;
+  background: rgba(110, 118, 129, 0.2);
+  padding: 0.2em 0.4em;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  color: #a5d6ff;
+  vertical-align: baseline;
+}
+
+.pre {
+  margin-bottom: 1.5em;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: #0d1117 !important;
+}
+
+.blockCode {
+  display: block;
+  padding: 1em;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  line-height: 1.5;
+  background: transparent !important;
+}
+
+/* Prism overrides */
+.markdown :global(code[class*="language-"]),
+.markdown :global(pre[class*="language-"]) {
+  text-shadow: none !important;
+  font-family: var(--font-mono) !important;
+}
