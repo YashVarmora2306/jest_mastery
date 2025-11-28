@@ -86,3 +86,15 @@
   text-shadow: none !important;
   font-family: var(--font-mono) !important;
 }
+
+@media (max-width: 640px) {
+  .markdown {
+    font-size: 0.95rem;
+  }
+  .markdown h1 {
+    font-size: 1.75em;
+  }
+  .markdown h2 {
+    font-size: 1.4em;
+  }
+}

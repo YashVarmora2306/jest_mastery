@@ -4,42 +4,19 @@
   border-right: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  position: sticky;
-  top: 0;
+  height: calc(100vh - 64px); /* Subtract navbar height */
+  position: fixed;
+  top: 64px; /* Start below navbar */
+  left: 0;
+  z-index: 40;
 }
 
-.header {
-  padding: 1.5rem;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 0.25rem;
-}
-
-.logoIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  background: var(--accent-primary);
-  color: white;
-  border-radius: 6px;
-  font-family: var(--font-mono);
-}
-
-.subtitle {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  margin-left: 3.5rem; /* Align with text */
+/* 4K adjustment */
+@media (min-width: 2560px) {
+  .sidebar {
+    height: calc(100vh - 80px);
+    top: 80px;
+  }
 }
 
 .nav {
@@ -116,4 +93,88 @@
   font-size: 0.75rem;
   color: var(--text-secondary);
   text-align: center;
+}
+
+/* Mobile Styles */
+
+.mobileToggle {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 101;
+  padding: 0.5rem;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  z-index: 99;
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 64px; /* Below navbar */
+    bottom: 0;
+    height: calc(100dvh - 64px);
+    z-index: 100;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .overlay.open {
+    display: block;
+    top: 64px; /* Below navbar */
+  }
+}
+
+/* 4K Styles */
+@media (min-width: 2560px) {
+  .sidebar {
+    width: 350px;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  .logoIcon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .item {
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .stepNum {
+    font-size: 0.9rem;
+  }
+  
+  .stepTitle {
+    font-size: 1.1rem;
+  }
+  
+  .icon {
+    transform: scale(1.2);
+  }
 }

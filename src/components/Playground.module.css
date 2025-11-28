@@ -257,9 +257,126 @@
   font-style: italic;
 }
 
-@media (max-width: 768px) {
+/* Mobile & Tablet */
+@media (max-width: 1024px) {
   .grid {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 50% 50%; /* Equal split */
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  .title {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .controls {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .zoomControls {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .runBtn {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+/* Very Small Mobile */
+@media (max-width: 480px) {
+  .zoomControls {
+    display: none; /* Hide zoom on very small screens if needed, or keep it */
+  }
+  
+  .grid {
+    grid-template-rows: 40% 60%; /* Give more space to output on small screens? Or keep 50/50 */
+  }
+}
+
+/* 4K / Ultra Wide */
+@media (min-width: 2560px) {
+  .header {
+    padding: 1.5rem 2rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    gap: 1rem;
+  }
+
+  .title svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .controls {
+    gap: 2rem;
+  }
+
+  .iconBtn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .iconBtn svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .runBtn {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.6rem;
+    gap: 0.8rem;
+  }
+
+  .runBtn svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .fontSizeLabel {
+    font-size: 1.2rem;
+    min-width: 60px;
+  }
+
+  .divider {
+    height: 32px;
+  }
+
+  .consoleSection h4 {
+    font-size: 1.1rem;
+  }
+
+  .logLine {
+    font-size: 1.1rem;
+  }
+
+  .suiteHeader {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.2rem;
+  }
+
+  .testName {
+    font-size: 1.2rem;
+  }
+
+  .testError {
+    font-size: 1.1rem;
+  }
+
+  .badge {
+    font-size: 1rem;
+    padding: 0.4rem 1rem;
   }
 }

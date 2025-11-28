@@ -1,5 +1,6 @@
 .container {
-  height: 100vh;
+  height: 100vh; /* Fallback */
+  height: 100dvh;
   padding: 1rem;
   background: var(--bg-app);
   display: flex;
@@ -26,4 +27,49 @@
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .container {
+    padding: 0.5rem;
+  }
+
+  .header {
+    margin-bottom: 0.5rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+    display: none; /* Hide subtitle on very small screens to save space */
+  }
+}
+
+/* Tablet */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container {
+    padding: 1rem;
+  }
+}
+
+/* 4K / Large Screens */
+@media (min-width: 2560px) {
+  .container {
+    padding: 2rem;
+    max-width: 2400px; /* Constrain width on ultra-wide */
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
 }
